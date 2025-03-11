@@ -4,7 +4,7 @@ from music_cog import music_cog
 from help_cog import help_cog
 
 def run_bot():
-    TOKEN = '<your discord token here>'
+    TOKEN = '<your token here>'
     intents = discord.Intents.default()
     
     intents.message_content = True

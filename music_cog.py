@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from yt_dlp import YoutubeDL
 
+
 class music_cog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -10,7 +11,13 @@ class music_cog(commands.Cog):
         
         self.music_queue = []
         
-        self.YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist':'True'}
+        #self.YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist':'True'}
+        self.YDL_OPTIONS = {
+            'format': 'bestaudio',  # Get the best audio quality available
+            'noplaylist': True,  # Avoid downloading playlists
+            'no_warnings': True,  # Suppress warnings
+            'ignoreerrors': True  # Ignore errors during the download process
+        }
         self.FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
         self.current_song = None
         self.vc = None
@@ -168,6 +175,7 @@ class music_cog(commands.Cog):
         if len(self.music_queue) > 0:
             song = self.music_queue.pop()
             embed = discord.Embed(title=f"{song[0]['title']} has been removed from the queue!", description=f" ") 
+            #await ctx.send(embed = embed)
             retval = self.get_queue()
             if retval != "":
                 embed.add_field(name=f"Here's the current queue!", value=f"{retval}") 
