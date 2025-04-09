@@ -8,5 +8,5 @@ How to use:
 3. invite the bot to your discord server
 4. install requirements.txt
 5. paste your discord bots token into the TOKEN varible in utabot.py
-7. make sure you have FFMPEG installed
+7. make sure you have FFMPEG installed and set up in PATH
 6. run from the command line using: python main.py
