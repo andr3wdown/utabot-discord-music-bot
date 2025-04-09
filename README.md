@@ -10,3 +10,4 @@ How to use:
 5. paste your discord bots token into the TOKEN varible in utabot.py
 7. make sure you have FFMPEG installed and set up in PATH
 6. run from the command line using: python main.py
+7. when you see your the bot online on your server use the command uta?help to display all available commands
